@@ -5,7 +5,9 @@
   "description": "Authenticate and publish to NPM orb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "foreach -g 'src/**/*.yml' -x 'js-yaml #{path}'",
+    "test": "circleci config validate src/orb.yml",
+    "pretest": "yarn lint"
   },
   "repository": "https://github.com/medfreeman/npm-orb.git",
   "keywords": [
@@ -17,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/medfreeman/npm-orb/issues"
   },
-  "homepage": "https://github.com/medfreeman/npm-orb#readme"
+  "homepage": "https://github.com/medfreeman/npm-orb#readme",
+  "devDependencies": {
+    "circleci-bin": "^1.1.1",
+    "foreach-cli": "^1.8.1",
+    "js-yaml": "^3.12.0"
+  }
 }
