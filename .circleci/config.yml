@@ -21,8 +21,10 @@ workflows:
       - orb-tools/pack:
           requires:
             - install-cli
+          attach-workspace: true
           source-dir: src/
           destination-orb-path: dist/orb.yml
+          workspace-path: .
       - orb-tools/publish:
           requires:
             - orb-tools/pack
@@ -31,6 +33,7 @@ workflows:
               ignore: /^v.*/
             branches:
               only: master
+          attach-workspace: true
           orb-path: dist/orb.yml
           orb-ref: ci-tools/npm@dev:$CIRCLE_SHA1
           publish-token-variable: $ORB_PUBLISHING_TOKEN
