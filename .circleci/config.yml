@@ -32,8 +32,7 @@ workflows:
             branches:
               only: master
           orb-path: dist/orb.yml
-          orb-ref: |
-            ci-tools/npm@dev:"${CIRCLE_SHA1}"
+          orb-ref: ci-tools/npm@dev:$CIRCLE_SHA1
           publish-token-variable: $ORB_PUBLISHING_TOKEN
           validate: false
           checkout: false
