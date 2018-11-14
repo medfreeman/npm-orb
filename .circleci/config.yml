@@ -6,12 +6,18 @@ version: 2.1
 
 defaults: &defaults
   executor: cli/default
-  working_directory: /usr/src/app
+
+jobs:
+  install-cli:
+    <<: *defaults
+    steps:
+      - cli/install
 
 workflows:
   version: 2
   build:
     jobs:
+      - install-cli
       - orb-tools/pack:
           source-dir: src/
           destination-orb-path: dist/orb.yml
