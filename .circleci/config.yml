@@ -1,0 +1,17 @@
+orbs:
+  cli: circleci/circleci-cli@volatile
+  orb-tools: circleci/orb-tools@2.0.2
+
+version: 2.1
+
+defaults: &defaults
+  executor: cli/default
+  working_directory: /usr/src/app
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - orb-tools/pack:
+          source-dir: src/
+          destination-orb-path: dist/orb.yml
