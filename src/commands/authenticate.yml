@@ -5,4 +5,4 @@
     - run:
         name: Authenticating with npm registry
         command: |
-          echo "//registry.npmjs.org/:_authToken=<< parameters.token >>" > ~/.npmrc
+          echo '//registry.npmjs.org/:_authToken=<< parameters.token >>' > ~/.npmrc
