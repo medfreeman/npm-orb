@@ -1,0 +1,21 @@
+{
+  "name": "npm-orb",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Authenticate and publish to NPM orb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/medfreeman/npm-orb.git",
+  "keywords": [
+    "circleci-orbs",
+    "npm"
+  ],
+  "author": "Mehdi Lahlou <mlahlou@protonmail.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medfreeman/npm-orb/issues"
+  },
+  "homepage": "https://github.com/medfreeman/npm-orb#readme"
+}
