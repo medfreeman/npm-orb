@@ -1,0 +1,21 @@
+  executor: node/node
+  parameters:
+    workspace-path:
+      description: "The key of a workflow workspace which contains the package to publish."
+      type: string
+      default: ''
+
+    token:
+      description: "Enter either your token or use the CircleCI UI to add your token under the 'NPM_TOKEN' env var"
+      type: string
+      default: '${NPM_TOKEN}'
+
+  steps:
+    - when:
+        condition: <<parameters.workspace-path>>
+        steps:
+          - attach_workspace:
+              at: <<parameters.workspace-path>>
+    - authenticate:
+        token: << parameters.token >>
+    - publish

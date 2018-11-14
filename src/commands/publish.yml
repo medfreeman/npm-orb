@@ -1,0 +1,4 @@
+  steps:
+    - run:
+        name: Publishing package to npm registry
+        command: npm publish
