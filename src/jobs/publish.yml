@@ -12,10 +12,10 @@
 
   steps:
     - when:
-        condition: <<parameters.workspace-path>>
+        condition: << parameters.workspace-path >>
         steps:
           - attach_workspace:
-              at: <<parameters.workspace-path>>
+              at: << parameters.workspace-path >>
     - authenticate:
         token: << parameters.token >>
     - publish
