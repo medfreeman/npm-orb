@@ -30,12 +30,26 @@ workflows:
             - orb-tools/pack
           filters:
             tags:
-              ignore: /^v.*/
+              ignore: /^\d+\.\d+\.\d+$/
             branches:
               only: master
           attach-workspace: true
           orb-path: dist/orb.yml
           orb-ref: ci-tools/npm@dev:$CIRCLE_SHA1
+          publish-token-variable: $ORB_PUBLISHING_TOKEN
+          validate: false
+          checkout: false
+      - orb-tools/publish:
+          requires:
+            - orb-tools/pack
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
+          attach-workspace: true
+          orb-path: dist/orb.yml
+          orb-ref: ci-tools/npm@$CIRCLE_TAG
           publish-token-variable: $ORB_PUBLISHING_TOKEN
           validate: false
           checkout: false
