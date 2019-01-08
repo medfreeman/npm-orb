@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/medfreeman/npm-orb#readme",
   "devDependencies": {
-    "circleci-bin": "^1.1.1",
-    "foreach-cli": "^1.8.1",
-    "husky": "^1.1.4",
-    "js-yaml": "^3.12.0",
-    "mkdirp": "^0.5.1",
-    "npm-run-all": "^4.1.3"
+    "circleci-bin": "1.1.1",
+    "foreach-cli": "1.8.1",
+    "husky": "1.1.4",
+    "js-yaml": "3.12.0",
+    "mkdirp": "0.5.1",
+    "npm-run-all": "4.1.3"
   },
   "husky": {
     "hooks": {
