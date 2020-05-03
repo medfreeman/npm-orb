@@ -1,6 +1,6 @@
 orbs:
   cli: circleci/circleci-cli@0.1.2
-  orb-tools: circleci/orb-tools@2.0.2
+  orb-tools: circleci/orb-tools@9.1.0
 
 version: 2.1
 
